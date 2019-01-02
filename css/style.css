@@ -270,6 +270,40 @@ select {
 .slide-nav-btn:hover {
     cursor: pointer;
 }
+/*Футер*/
+.footer {
+	width: 100%;
+	background-color: #178994;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 0.9em;
+	margin-top: 2em;
+}
+.social {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	padding-top: 0.5em;
+}
+.social >  img {
+	width: 2.5em;
+	height: 2.5em;
+	cursor: pointer;
+}
+.right{display: flex; justify-content: space-around; flex-wrap: wrap; width: 100%; color: #fff;}
+.right1 {
+    padding: 1em;
+}
+.right2 {
+    padding: 1em;
+}
+.right3 {
+    padding: 1em;
+}
+.right3 > p > a {
+color: #b2bafb;
+}
+.bottom {width: 100%; padding: 1em; text-align: center; border-top: 3px solid #1E90FF; color: #fff;}
 /*Мобильная версия*/
 @media (max-width: 991px) {
 	.contentBox {
