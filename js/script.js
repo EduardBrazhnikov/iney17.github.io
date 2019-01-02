@@ -1,7 +1,10 @@
 "use strict"
 $(document).ready(function() { 
-	var phoneBlock = document.getElementById('overlay');
-	var phoneBlock = document.getElementById('overlay');
+var slideNow = 1;
+var slideCount = $('#slidewrapper').children().length;
+var slideInterval = 5000;
+var navBtnId = 0;
+var translateWidth = 0;
 $('.vkl1').click(function() {
    this.style.backgroundColor = '#32CD32';
    $('.order1').css('backgroundColor', '#32CD32');
@@ -15,7 +18,7 @@ $('.vkl1').click(function() {
    $('.triangle-down2').css('display', 'none');
    $('.triangle-down3').css('display', 'none');
    $('.triangle-down4').css('display', 'none');
-   var cost = 299;
+   var cost = 1199;
    var nameBox = 'NEW YEAR BOX';
    var descriptionBox = 'Тематические предметы внутри!Новогодние сладости, хлопушки, аксессуары для маскарада, конечно же крутые гаджеты и даже новогодний снег :) !';
    $('#price').html('цена: ' + cost + ' грн');
@@ -35,7 +38,7 @@ $('.vkl2').click(function() {
    $('.triangle-down2').css('display', 'block');
    $('.triangle-down3').css('display', 'none');
    $('.triangle-down4').css('display', 'none');
-   var cost = 500;
+   var cost = 1199;
    var nameBox = 'BLOGGER BOX';
    var descriptionBox = 'Внутри бокса полезные предметы для блогера (экшн камера, трипод, попсокет, селфи ринг и др.), а так же уникальный YouTube аксессуар!';
    $('#price').html('цена: ' + cost + ' грн');
@@ -55,7 +58,7 @@ $('.vkl3').click(function() {
    $('.triangle-down2').css('display', 'none');
    $('.triangle-down3').css('display', 'block');
    $('.triangle-down4').css('display', 'none');
-   var cost = 999;
+   var cost = 799;
    var nameBox = 'SCHOOL BOX';
    var descriptionBox = 'Крутые школьные предметы внутри! Рюкзаки, пеналы, канцелярия! А так же крутой гаджет!';
    $('#price').html('цена: ' + cost + ' грн');
@@ -83,126 +86,74 @@ $('.vkl4').click(function() {
    $('.descriptionBox').html(descriptionBox);
 })
  $("input#public").change(function(){
-                if ($(this).prop('checked')) {
-					$('#hide').fadeIn(300);
-                  } else {
-                    $('#hide').fadeOut().show(); 
-                  }
-                });
-// $('.popup__close').click(function() {
-    // phoneBlock.style.display = 'none';
-// });
-// $(window).scroll(function() {
-// if($(this).scrollTop() != 0) {
-// $('.topButton').fadeIn();
-// } else {
-// $('.topButton').fadeOut();
-// }
-// });
-// $('.topButton').click(function() {
-// $('body,html').animate({scrollTop:0},700);
-// });
-// $('a[href*="#contact"]').click(function() {
-	// var h = $('#contact').offset();
-	// $('body,html').animate({scrollTop:h.top},700);
-// });	
-// $('a[href*="#about"]').click(function() {
-	// var h = $('#about').offset();
-	// $('body,html').animate({scrollTop:h.top},700);
-// });	
-// $('#logBut').click(function(e) {
-	// e.preventDefault();
-	// sendTelephone();	
-// });
-// $('#button1').click(function(e) {
-	// e.preventDefault();
-	// sendCupcakes();	
-// });
-// $('#button2').click(function(e) {
-	// e.preventDefault();
-	// sendCake();	
-// });
-// $('#button3').click(function(e) {
-	// e.preventDefault();
-	// sendMacaroon();	
-// });
-// $('#button4').click(function(e) {
-	// e.preventDefault();
-	// sendBlueberry();
-// });
-// function sendTelephone() {
-	// var data = $("#formMain").serialize();
-	// jQuery.ajax({
-                    // url: "send_email.php",
-                    // type: "POST",
-                    // dataType: "json",
-                    // data: data, 
-                    // success: function(data) {
-					// $('#messegeResult').html('<p>' + data.text + '</p>');
-                // },
-                // error: function(data) {
-                // $('#messegeResult').html('<p>Возникла ошибка. Попробуйте еще раз</p>');
-                // }
-             // });
-// }
-// function sendCupcakes() {
-	// var data = $("#cupcakes").serialize();
-	// jQuery.ajax({
-                    // url: "send_email.php",
-                    // type: "POST",
-                    // dataType: "json",
-                    // data: data, 
-                    // success: function(data) {
-						// $('#result1').html('<p>' + data.text1 + '</p>');
-                // },
-                // error: function(data) {
-				// $('#result1').html('<p>Возникла ошибка. Попробуйте еще раз</p>');
-                // }
-             // });
-// }
-// function sendCake() {
-	// var data = $("#cake").serialize();
-	// jQuery.ajax({
-                    // url: "send_email.php",
-                    // type: "POST",
-                    // dataType: "json",
-                    // data: data, 
-                    // success: function(data) {
-						// $('#result2').html('<p>' + data.text2 + '</p>');
-                // },
-                // error: function(data) {
-				// $('#result2').html('<p>Возникла ошибка. Попробуйте еще раз</p>');
-                // }
-             // });
-// }
-// function sendMacaroon() {
-	// var data = $("#macaroon").serialize();
-	// jQuery.ajax({
-                    // url: "send_email.php",
-                    // type: "POST",
-                    // dataType: "json",
-                    // data: data, 
-                    // success: function(data) {
-                        // $('#result3').html('<p>' + data.text3 + '</p>');
-                // },
-                // error: function(data) {
-				// $('#result3').html('<p>Возникла ошибка. Попробуйте еще раз</p>');
-                // }
-             // });
-// }
-// function sendBlueberry() {
-	// var data = $("#blueberry").serialize();
-	// jQuery.ajax({
-                    // url: "send_email.php",
-                    // type: "POST",
-                    // dataType: "json",
-                    // data: data, 
-                    // success: function(data) {
-						// $('#result4').html('<p>' + data.text4 + '</p>');
-                // },
-                // error: function(data) {
-				// $('#result4').html('<p>Возникла ошибка. Попробуйте еще раз</p>');
-                // }
-             // });
-// }
+    if ($(this).prop('checked')) {
+		$('#hide').fadeIn(300);
+    } else {
+        $('#hide').fadeOut().show(); 
+        }
+});
+var switchInterval = setInterval(nextSlide, slideInterval);
+
+    $('#viewport').hover(function() {
+        clearInterval(switchInterval);
+    }, function() {
+        switchInterval = setInterval(nextSlide, slideInterval);
+    });
+
+    $('#next-btn').click(function() {
+        nextSlide();
+    });
+
+    $('#prev-btn').click(function() {
+        prevSlide();
+    });
+
+    $('.slide-nav-btn').click(function() {
+        navBtnId = $(this).index();
+
+        if (navBtnId + 1 != slideNow) {
+            translateWidth = -$('#viewport').width() * (navBtnId);
+            $('#slidewrapper').css({
+                'transform': 'translate(' + translateWidth + 'px, 0)',
+                '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+                '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+            });
+            slideNow = navBtnId + 1;
+        }
+    });
+function nextSlide() {
+    if (slideNow == slideCount || slideNow <= 0 || slideNow > slideCount) {
+        $('#slidewrapper').css('transform', 'translate(0, 0)');
+        slideNow = 1;
+    } else {
+        translateWidth = -$('#viewport').width() * (slideNow);
+        $('#slidewrapper').css({
+            'transform': 'translate(' + translateWidth + 'px, 0)',
+            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+        });
+        slideNow++;
+    }
+}		
+function prevSlide() {
+    if (slideNow == 1 || slideNow <= 0 || slideNow > slideCount) {
+        translateWidth = -$('#viewport').width() * (slideCount - 1);
+        $('#slidewrapper').css({
+            'transform': 'translate(' + translateWidth + 'px, 0)',
+            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+        });
+        slideNow = slideCount;
+    } else {
+        translateWidth = -$('#viewport').width() * (slideNow - 2);
+        $('#slidewrapper').css({
+            'transform': 'translate(' + translateWidth + 'px, 0)',
+            '-webkit-transform': 'translate(' + translateWidth + 'px, 0)',
+            '-ms-transform': 'translate(' + translateWidth + 'px, 0)',
+        });
+        slideNow--;
+    }
+}
+
+
 });

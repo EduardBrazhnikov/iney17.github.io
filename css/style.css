@@ -2,10 +2,23 @@
 a { text-decoration: none; color: #8B0000; font-weight: 600;}
 li {list-style-type: none;}
 html, body { height: 100%; font-family: sans-serif; font-weight: 400;}
-form {}
 textarea { width: 300px; border: 2px solid #49aa53; padding: 10px; resize: none; outline:none;}
-/* input { width: 300px; height: 30px; border: 2px solid #49aa53; padding-left: 10px; outline:none;} */
+/* Шапка сайта */
+.header {
+	font-family: 'ZCOOL KuaiLe', cursive;
+	background-color: #15bdce;
+	width: 100%;
+	height: 300px;
+	border-bottom: 7px solid #178994;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+.topBlock {position: relative; padding: 0.5em; z-index: 4; text-align: center; background-color: #1E90FF; opacity: 0.5;}
+.topBlock > p {color: #fff;}
+/*Контент сайта*/
 .korpus {
+	width: 60%;
+	margin: auto;
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
@@ -50,7 +63,7 @@ select {
 	background-color: #1E90FF;
 	color: #fff;
 	border-radius: 1em 1em 1em 1em;
-}
+} 
 .triangle-down1, .triangle-down2, .triangle-down3, .triangle-down4 {
 	position: absolute;
 	margin-left: 5.375em;
@@ -107,9 +120,6 @@ select {
 	color: #fff;
 	transition: background .4s,border-color .4s,color .4s;
 	}
-.radio_buttons {
-	
-}
 .radio_buttons div {
     float: left;
 }
@@ -138,32 +148,30 @@ select {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
-@media (max-width: 991px) {
-	.contentBox {
-	width: 100%;
-	border: 5px solid #49aa53;
+.titleBox {
+	width: 30%;
+	height: 50px;
+	text-align: center;
 	margin: auto;
+	margin-bottom: 2em;
 	margin-top: 2em;
-    box-sizing: border-box;
+	line-height: 50px;
+	font-size: 1.5em;
+	color: #808000;
+	box-shadow: 7px 5px;
+	background-color: yellow;
+	transform: rotate(-3deg);
+	font-family: 'ZCOOL KuaiLe', cursive;
 }
-}
+.titleBox > p {color: blue;}
 /*Анимация*/
 @keyframes swing {
   15% {transform: translateX(9px);}
   30% {transform: translateX(-9px);}
   40% {transform: translateX(6px);}
-  50% {
-    -webkit-transform: translateX(-6px);
-    transform: translateX(-6px);
-  }
-  65% {
-    -webkit-transform: translateX(3px);
-    transform: translateX(3px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
+  50% {transform: translateX(-6px);}
+  65% {transform: translateX(3px);}
+  100% {transform: translateX(0);}
 }
 @keyframes onePicture {
  0% {transform: scale(1);}
@@ -177,4 +185,102 @@ select {
 .picture:hover {
   animation: swing 0.6s ease;
   animation-iteration-count:infinite;
+}
+/*Слайдер*/
+#block-for-slider {
+    width: 60%;
+    margin: auto;
+	margin-bottom: 2em;
+	margin-top: 2em;
+}
+#viewport {
+    width: 100%;
+	height: 300px;
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+#slidewrapper {
+    position: relative;
+    width: calc(100% * 4);
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    -webkit-transition-timing-function: cubic-bezier(.67,.01,.23,1);
+    -o-transition-timing-function: cubic-bezier(.67,.01,.23,1);
+    transition-timing-function: cubic-bezier(.67,.01,.23,1);
+}
+#slidewrapper, #slidewrapper ul, #slidewrapper li {
+    margin: 0;
+    padding: 0;
+}
+.slide {
+    width: calc(100%/4);
+    list-style: none;
+    display: inline;
+    float: left;
+}
+.slide-img {
+    width: 100%;
+}
+#prev-btn, #next-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    top: calc(50% - 25px);
+}
+#prev-btn:hover, #next-btn:hover {
+    cursor: pointer;
+}
+#prev-btn {
+    left: 20px;
+	font-size: 2em;
+	line-height: 50px;
+}
+#next-btn {
+    right: 20px;
+	font-size: 2em;
+	line-height: 50px;
+}
+#nav-btns {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.slide-nav-btn {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 3px;
+}
+.slide-nav-btn:hover {
+    cursor: pointer;
+}
+/*Мобильная версия*/
+@media (max-width: 991px) {
+	.contentBox {
+	width: 100%;
+	border: 5px solid #49aa53;
+	margin: auto;
+	margin-top: 2em;
+    box-sizing: border-box;
+}
+    .korpus {width: 100%;}
+	iframe {width: 100%;}
+	#block-for-slider {width: 100%;}
+	.titleBox {width: 80%;}
 }
