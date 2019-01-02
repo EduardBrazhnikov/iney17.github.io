@@ -279,6 +279,12 @@ select {
 	margin-top: 2em;
     box-sizing: border-box;
 }
+.vkl1, .vkl2, .vkl3, .vkl4 {
+	width: 10em;
+}
+.triangle-down1, .triangle-down2, .triangle-down3, .triangle-down4 {
+	margin-left: 4.325em;
+}
     .korpus {width: 100%;}
 	iframe {width: 100%;}
 	#block-for-slider {width: 100%;}
