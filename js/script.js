@@ -92,6 +92,30 @@ $('.vkl4').click(function() {
         $('#hide').fadeOut().show(); 
         }
 });
+/*Мобильное меню*/
+$('.butM').click(function(e) {
+    var $Mnavigation = $('.Mnavigation');
+    if ($Mnavigation.css('display') != 'block') {
+        $Mnavigation.show("slow");
+		$('body').css('margin-left', '50%');
+		$('body').css('width', '150%');
+		$('body').css('overflow-x', 'hidden');
+		$('body').css('transition', '1.2s');
+        var firstClick = true;
+        $(document).bind('click.myEvent', function(e) {
+            if (!firstClick && $(e.target).closest('.Mnavigation').length == 0) {
+                $Mnavigation.hide("slow");
+				$('body').css('margin-left', '0');
+				$('body').css('width', '100%');
+				$('body').css('overflow-x', 'auto');
+                $(document).unbind('click.myEvent');
+            }
+            firstClick = false;
+        });
+    }
+    e.preventDefault();
+});
+/*Слайдер*/
 var switchInterval = setInterval(nextSlide, slideInterval);
 
     $('#viewport').hover(function() {
