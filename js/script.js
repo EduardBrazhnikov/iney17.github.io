@@ -107,7 +107,6 @@ $('.butM').click(function(e) {
                 $Mnavigation.hide("slow");
 				$('body').css('margin-left', '0');
 				$('body').css('width', '100%');
-				$('body').css('overflow-x', 'auto');
                 $(document).unbind('click.myEvent');
             }
             firstClick = false;
