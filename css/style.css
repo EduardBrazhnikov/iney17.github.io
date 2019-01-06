@@ -1,7 +1,7 @@
 * { padding: 0; margin: 0;}
 a { text-decoration: none; color: #8B0000; font-weight: 600;}
 li {list-style-type: none;}
-html, body { height: 100%; font-family: sans-serif; font-weight: 400;}
+html, body { height: 100%; font-family: sans-serif; font-weight: 400; overflow: hidden;}
 textarea { width: 300px; border: 2px solid #49aa53; padding: 10px; resize: none; outline:none;}
 /* Шапка сайта */
 .header {
@@ -11,6 +11,7 @@ textarea { width: 300px; border: 2px solid #49aa53; padding: 10px; resize: none;
 	height: 300px;
 	border-bottom: 7px solid #178994;
 	overflow: hidden;
+	
 }
 .topBlock {position: relative; height: 25px; padding: 0.5em; z-index: 4; text-align: center; background-color: #1E90FF; opacity: 0.5;}
 .topBlock > p {color: #fff;}
