@@ -11,11 +11,107 @@ textarea { width: 300px; border: 2px solid #49aa53; padding: 10px; resize: none;
 	height: 300px;
 	border-bottom: 7px solid #178994;
 	overflow: hidden;
-	box-sizing: border-box;
 }
-.topBlock {position: relative; padding: 0.5em; z-index: 4; text-align: center; background-color: #1E90FF; opacity: 0.5;}
+.topBlock {position: relative; height: 25px; padding: 0.5em; z-index: 4; text-align: center; background-color: #1E90FF; opacity: 0.5;}
 .topBlock > p {color: #fff;}
+/*Меню*/
+.Mnavigation {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 240px;
+  list-style: none;
+}
+.butM {
+  display: none;
+  position: absolute;
+  top: 0.7em;
+  left: 0.3em;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 4em;
+  font-weight: 600;
+}
+.Mnav-item {
+  display: flex;
+}
+.Mnav-item a {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  color: #fff;
+  font-size: 1.7em;
+  text-decoration: none;
+}
+.Mnav-item a:hover {
+  padding-bottom: 1.2em;
+  background-color: transparent;
+  text-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+.shadow1, .shadow2, .shadow4 {position: relative; left: 0; top: 0;}
+.shadow1:after {
+    content: "";
+    width: 40px;
+    height: 8px;
+    background: #000;
+    position: absolute;
+	top: 55px;
+    left: 35%;
+    bottom: 0;
+    filter: blur(10px);
+    visibility: hidden;
+}
+.shadow2:after {
+    content: "";
+    width: 60px;
+    height: 8px;
+    background: #000;
+    position: absolute;
+	top: 55px;
+    left: 35%;
+    bottom: 0;
+    filter: blur(10px);
+    visibility: hidden;
+}
+.shadow4:after {
+    content: "";
+    width: 40px;
+    height: 8px;
+    background: #000;
+    position: absolute;
+	top: 55px;
+    left: 35%;
+    bottom: 0;
+    filter: blur(10px);
+    visibility: hidden;
+}
+.Mnav-item > a:hover:after{
+    visibility: visible;
+}
 /*Контент сайта*/
+.titleBlock {
+	text-align: center; 
+	margin: 1em; 
+	font-family: 'ZCOOL KuaiLe', cursive;
+}
+.rowAnswer {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	font-family: 'ZCOOL KuaiLe', cursive;
+}
+.imgQuestion > img {
+	width: 200px;
+	height: 200px;
+}
+.txtAnswer {
+	width: 70%;
+	padding: 1em;
+}
 .korpus {
 	width: 60%;
 	margin: auto;
@@ -191,10 +287,10 @@ select {
     width: 60%;
     margin: auto;
 	margin-bottom: 2em;
-	margin-top: 2em;
+	margin-top: 0.5em;
 }
 #viewport {
-    width: 100%;
+    width: 100%; 
 	height: 300px;
     position: relative;
     overflow: hidden;
@@ -300,12 +396,10 @@ select {
 .right3 {
     padding: 1em;
 }
-.right3 > p > a {
-color: #b2bafb;
-}
 .bottom {width: 100%; padding: 1em; text-align: center; border-top: 3px solid #1E90FF; color: #fff;}
 /*Мобильная версия*/
 @media (max-width: 991px) {
+	.butM {display: block;}
 	.contentBox {
 	width: 100%;
 	border: 5px solid #49aa53;
@@ -323,4 +417,35 @@ color: #b2bafb;
 	iframe {width: 100%;}
 	#block-for-slider {width: 100%;}
 	.titleBox {width: 80%;}
+.Mnavigation {
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 3000;
+  list-style: none;
+  background: #494d4e;
+  box-sizing: border-box;
+}
+.Mnav-item {
+  width: 100%;
+  height: 30px;
+  margin-top: 1em;
+  line-height: 15px;
+}
+.Mnav-item a {
+  padding: 1em;
+  color: #fff;
+  font-size: 1em;
+  margin: auto;
+  text-decoration: none;
+}
+.Mnav-item a:hover {
+  background: #1E90FF;
+}
+.Mnav-item > a:hover:after{
+    visibility: hidden;
+}
 }
