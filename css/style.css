@@ -1,7 +1,7 @@
 * { padding: 0; margin: 0;}
 a { text-decoration: none; color: #8B0000; font-weight: 600;}
 li {list-style-type: none;}
-html, body { height: 100%; font-family: sans-serif; font-weight: 400; overflow-x: hidden;}
+html, body { height: 100%; font-family: sans-serif; font-weight: 400; }
 textarea { width: 300px; border: 2px solid #49aa53; padding: 10px; resize: none; outline:none;}
 /* Шапка сайта */
 .header {
